@@ -9,4 +9,5 @@ MAINTAINER Elders
 
 COPY --from=downloader /apoc-3.4.0.8-all.jar /var/lib/neo4j/plugins/
 
-RUN echo "dbms.security.procedures.whitelist=apoc.* >> /var/lib/neo4j/conf/neo4j.conf"
+RUN echo "dbms.security.procedures.whitelist=apoc.* >> /var/lib/neo4j/conf/neo4j.conf" && \
+    echo "dbms.security.procedures.unrestricted=apoc.* >> /var/lib/neo4j/conf/neo4j.conf"
